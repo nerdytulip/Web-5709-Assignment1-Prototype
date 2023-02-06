@@ -21,12 +21,18 @@ function Bookmark(props) {
     if (mybool) {
       console.log("inside bookmark state true");
       setbookmarkImageSrc("selected.jpg");
-      toast.success("Recipe Saved to Profile !", {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
+      toast.success(
+        "Recipe saved to profile , refer to saved section under profile !",
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+        }
+      );
     } else {
       console.log("inside bookmark state false");
       setbookmarkImageSrc("unselected.jpg");
+      toast.info("Recipe removed from profile saved section !", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
     }
   };
 
@@ -95,7 +101,7 @@ function Bookmark(props) {
           </Col>
         </Row>
       </Container>
-      <ToastContainer autoClose={5000} />
+      <ToastContainer autoClose={3000} />
     </div>
   );
 }
